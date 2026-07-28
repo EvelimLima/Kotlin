@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">App2_EletricCar</string>
+    <string name="title">Eletric Car</string>
+    <string name="carros">Carros</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="preco">Preco</string>
+    <string name="Bateria">Bateria</string>
+    <string name="preco_kwh">preco_kwh</string>
+    <string name="kwh_percorrido">kwh_percorrido</string>
+    <string name="calcular">Calcular</string>
+</resources>
