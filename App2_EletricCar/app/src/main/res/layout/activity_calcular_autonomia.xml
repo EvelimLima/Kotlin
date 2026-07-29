@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/_calcular_autonomia"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcule a autonomia"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.064" />
+
+
+    <EditText
+        android:id="@+id/et_Preco_Kwh"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="30dp"
+        android:hint="@string/informe_o_preco_do_kwh"
+        android:inputType="numberDecimal"
+        android:maxLength="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+
+    <EditText
+        android:id="@+id/et_kmPercorrido"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="30dp"
+        android:hint="@string/kwh_percorrido"
+        android:inputType="numberDecimal"
+        android:maxLength="10"
+        app:layout_constraintEnd_toEndOf="@+id/et_Preco_Kwh"
+        app:layout_constraintStart_toStartOf="@+id/et_Preco_Kwh"
+        app:layout_constraintTop_toBottomOf="@id/et_Preco_Kwh" />
+
+    <Button
+        android:id="@+id/button_calcular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/calcular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_kmPercorrido" />
+
+
+    <TextView
+        android:id="@+id/tv_resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="saida"
+        android:textColor="@color/design_default_color_secondary"
+        android:textSize="180px"
+        app:layout_constraintEnd_toEndOf="@+id/button_calcular"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/button_calcular"
+        app:layout_constraintTop_toBottomOf="@+id/button_calcular" />
+
+    <ImageView
+        android:id="@+id/img_ButtonClose"
+        android:layout_width="32dp"
+        android:layout_height="29dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/et_Preco_Kwh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.732"
+        app:layout_constraintStart_toEndOf="@+id/tv_title"
+        app:srcCompat="@drawable/baseline_close_24" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
