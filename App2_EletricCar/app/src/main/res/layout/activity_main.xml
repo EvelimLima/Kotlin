@@ -41,125 +41,26 @@
         app:layout_constraintTop_toBottomOf="@id/tv_titulo" />
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_car"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:elevation="24dp"
-        app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_favoritos">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cv_card_content"
-            android:layout_width="335dp"
-            android:layout_marginBottom="16dp"
-            android:layout_height="wrap_content">
-
-
-            <ImageView
-                android:id="@+id/iv_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:src="@drawable/carroele"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tv_preco"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="@string/preco"
-                android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_image" />
-
-            <TextView
-                android:id="@+id/tv_preco_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="300.000,000"
-                app:layout_constraintStart_toEndOf="@id/tv_preco"
-                app:layout_constraintTop_toBottomOf="@id/iv_image" />
-
-            <TextView
-                android:id="@+id/tv_bateria"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="@string/Bateria"
-                android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_preco" />
-
-            <TextView
-                android:id="@+id/tv_bateria_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="93,4 kWh"
-                app:layout_constraintStart_toEndOf="@id/tv_bateria"
-                app:layout_constraintTop_toBottomOf="@id/tv_preco_value" />
-
-            <TextView
-                android:id="@+id/tv_potencia"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="Potencia"
-                android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_bateria" />
-
-            <TextView
-                android:id="@+id/tv_potencia_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="646 cv"
-                app:layout_constraintStart_toEndOf="@id/tv_potencia"
-                app:layout_constraintTop_toBottomOf="@id/tv_bateria_value" />
-
-
-            <TextView
-                android:id="@+id/tv_recarga"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="Recarga"
-                android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_potencia" />
-
-            <TextView
-                android:id="@+id/tv_recarga_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="23min"
-                app:layout_constraintStart_toEndOf="@id/tv_recarga"
-                app:layout_constraintTop_toBottomOf="@id/tv_potencia_value" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
     <Button
         android:id="@+id/button_calculeAutonomia"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="60dp"
         android:text="calcular a autonomia"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list_car"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/button_calculeAutonomia"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cv_car" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_favoritos"
+        tools:listitem="@layout/carro_item"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
