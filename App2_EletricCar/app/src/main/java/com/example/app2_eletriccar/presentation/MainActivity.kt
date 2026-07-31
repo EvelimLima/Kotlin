@@ -2,16 +2,13 @@ package com.example.app2_eletriccar.presentation
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
-import android.widget.EditText
-import android.widget.ListAdapter
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app2_eletriccar.R
-import com.example.app2_eletriccar.presentation.adapter.CarAdapter
+import com.example.app2_eletriccar.data.CarFactory
+import com.example.app2_eletriccar.ui.adapter.CarAdapter
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,33 +20,27 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        seupViews()
+        setupViews()
         setupListeners()
         setupList()
 
     }
 
-    fun seupViews(){
+    fun setupViews(){  //chama as views
         btn_calcularAutonomia = findViewById(R.id.button_calculeAutonomia)
         rv_lista_car = findViewById(R.id.rv_list_car)
     }
 
-
-    fun setupList(){
-        var dados = arrayOf(
-            "uva", "banana", "tangerina", "manga"
-        )
-
-        val adapter = CarAdapter(dados)
-        rv_lista_car.adapter = adapter
-
-    }
-
-    fun setupListeners(){
+    fun setupListeners() { // os cliques
         btn_calcularAutonomia.setOnClickListener {
-           // calcular()
+            // calcular()
             startActivity(Intent(this, CalcularAutonomiaActivity::class.java))
         }
+    }
+    fun setupList(){ // conecta os adapter
+        val adapter = CarAdapter(CarFactory.list)
+        rv_lista_car.adapter = adapter
+
     }
 
 }
