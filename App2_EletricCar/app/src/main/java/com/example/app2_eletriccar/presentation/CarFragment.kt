@@ -44,9 +44,10 @@ class CarFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        callService()
+
         setupViews(view)
         setupListeners()
+        callService()
 
     }
 
@@ -62,7 +63,10 @@ class CarFragment: Fragment() {
 
     fun setupList(){ // conecta os adapter
         val adapter = CarAdapter(carrosArray)
+        // parou aqui
         rv_lista_car.adapter = adapter
+
+
 
     }
 
@@ -74,7 +78,9 @@ class CarFragment: Fragment() {
 
     fun callService (){
         var urlBase = "https://raw.githubusercontent.com/igorbag/cars-api/main/cars.json"
-            Mytask().execute(urlBase)
+        Mytask().execute(urlBase)
+
+        progress.visibility = View.VISIBLE // <-
     }
 
     inner class Mytask: AsyncTask<String, String, String>(){
@@ -157,6 +163,8 @@ class CarFragment: Fragment() {
                     )
                     carrosArray.add(model)
             }
+
+                progress.visibility = View.GONE // <-
                 setupList()
 
             } catch (ex: Exception){
