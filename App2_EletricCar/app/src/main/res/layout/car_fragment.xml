@@ -7,15 +7,17 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_list_car"
+        android:id="@+id/rcv_list_car"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="gone"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/carro_item" />
+        tools:listitem="@layout/carro_item"
+        tools:visibility="visible"/>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -25,12 +27,10 @@
         android:layout_margin="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:visibility="gone"
         android:contentDescription="@string/calcular"
         android:src="@drawable/baseline_calculate_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:visibility="visible"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ProgressBar
         android:id="@+id/pb_loader"
@@ -38,11 +38,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:indeterminate="true"
-        tools:visibility="visible"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/rv_list_car"
+        app:layout_constraintBottom_toBottomOf="@+id/rcv_list_car"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rv_list_car" />
+        app:layout_constraintTop_toTopOf="@+id/rcv_list_car"
+        tools:visibility="visible" />
+
+
+    <ImageView
+        android:id="@+id/iv_empty_state"
+        android:layout_width="87dp"
+        android:layout_height="91dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_android_wifi_4_bar_off_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_noInternet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_wifi"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/iv_empty_state"
+        app:layout_constraintStart_toStartOf="@id/iv_empty_state"
+        app:layout_constraintTop_toBottomOf="@id/iv_empty_state"
+        android:padding="16dp"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

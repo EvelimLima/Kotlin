@@ -9,4 +9,5 @@
     <string name="kwh_percorrido">kwh_percorrido</string>
     <string name="calcular">Calcular</string>
     <string name="informe_o_preco_do_kwh">informe o preco do kwh</string>
+    <string name="no_wifi">sem conexao com wifi</string>
 </resources>
